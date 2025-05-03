@@ -1,0 +1,2 @@
+pygame==2.6.1
+tkinter  # Usually comes with Python installation 
