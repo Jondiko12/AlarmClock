@@ -5,6 +5,7 @@ import os
 from tkcalendar import Calendar
 from PIL import Image, ImageTk
 import customtkinter as ctk
+from src.ui.git_control_panel import GitControlPanel
 
 class ModernAlarmClockUI:
     def __init__(self, root, app):
@@ -86,15 +87,18 @@ class ModernAlarmClockUI:
         self.alarm_tab = ttk.Frame(self.notebook)
         self.timer_tab = ttk.Frame(self.notebook)
         self.stopwatch_tab = ttk.Frame(self.notebook)
+        self.git_tab = ttk.Frame(self.notebook)
         
         self.notebook.add(self.alarm_tab, text="Alarms")
         self.notebook.add(self.timer_tab, text="Timer")
         self.notebook.add(self.stopwatch_tab, text="Stopwatch")
+        self.notebook.add(self.git_tab, text="Git Control")
         
         # Setup each tab
         self.setup_alarm_tab()
         self.setup_timer_tab()
         self.setup_stopwatch_tab()
+        self.setup_git_tab()
         
     def setup_alarm_tab(self):
         """Setup the alarm tab with modern design"""
@@ -289,6 +293,24 @@ class ModernAlarmClockUI:
             command=self.reset_stopwatch
         )
         self.stopwatch_reset_button.pack(side=tk.LEFT, padx=5)
+        
+    def setup_git_tab(self):
+        """Setup the Git control tab"""
+        # Create Git control panel
+        self.git_panel = GitControlPanel(
+            self.git_tab,
+            repo_path=os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+        )
+        self.git_panel.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
+        
+        # Add update button
+        update_button = ttk.Button(
+            self.git_tab,
+            text="Refresh Status",
+            style="Modern.TButton",
+            command=self.git_panel.update
+        )
+        update_button.pack(pady=10)
         
     def browse_sound(self):
         """Open file dialog to select alarm sound"""
