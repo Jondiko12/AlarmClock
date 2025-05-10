@@ -1,3 +1,6 @@
 pygame==2.6.1
 tkcalendar==1.6.1
+Pillow==10.2.0
+customtkinter==5.2.2
+GitPython==3.1.42
 # tkinter is included with Python installation 
