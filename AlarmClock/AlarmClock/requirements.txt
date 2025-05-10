@@ -1,3 +1,0 @@
-pygame==2.6.1
-tkcalendar==1.6.1
-# tkinter is included with Python installation 
