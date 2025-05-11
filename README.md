@@ -6,7 +6,9 @@ A modern, customizable smart alarm clock built with Python and Tkinter. Features
 
 ## 🖼️ UI Preview
 
-![UI Preview](path/to/screenshot.png) <!-- Replace with actual image link if hosted -->
+![image](https://github.com/user-attachments/assets/169a51de-d503-4380-85a4-794c04bcd56d)
+
+![image](https://github.com/user-attachments/assets/a0dd8fac-24e1-4055-a4f0-52b9773e087f)
 
 ---
 
